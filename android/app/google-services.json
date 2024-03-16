@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "411745867774",
+    "firebase_url": "https://ekroy-d3039-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ekroy-d3039",
+    "storage_bucket": "ekroy-d3039.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411745867774:android:70137f3d35c2f568e852af",
+        "android_client_info": {
+          "package_name": "com.example.ecommerece"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411745867774-695p95q8u9vovkt4kdbdj4pgkldceg1v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY4y4KxLf36HhtJCXszx8XDcKkpaSn3z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411745867774-695p95q8u9vovkt4kdbdj4pgkldceg1v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
