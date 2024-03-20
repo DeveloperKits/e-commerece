@@ -43,6 +43,8 @@ dependencies:
   cloud_firestore:
   firebase_storage:
   firebase_messaging:
+  flutter_styled_toast: ^2.2.1
+  flutter_easyloading:
 
 dev_dependencies:
   flutter_test:
