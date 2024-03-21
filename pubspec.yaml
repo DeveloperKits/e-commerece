@@ -41,6 +41,7 @@ dependencies:
   firebase_core:
   firebase_auth:
   cloud_firestore:
+  firebase_database:
   firebase_storage:
   firebase_messaging:
   flutter_styled_toast: ^2.2.1

@@ -1,4 +1,5 @@
 import 'package:ecommerece/auth/auth_service.dart';
+import 'package:ecommerece/db/db_helper.dart';
 import 'package:ecommerece/pages/dashboard_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -110,9 +111,15 @@ class _LoginPageState extends State<LoginPage> {
       EasyLoading.show(status: 'login...');
 
       try{
-        await AuthService.loginAdmin(email, password);
-        EasyLoading.showSuccess('Great Success!');
-        Navigator.pushReplacementNamed(context, DashBoardPage.routeName);
+        final isAdmin = await AuthService.loginAdmin(email, password);
+        EasyLoading.dismiss();
+        if(isAdmin) {
+          EasyLoading.showSuccess('Great Success!');
+          Navigator.pushReplacementNamed(context, DashBoardPage.routeName);
+        }else{
+          AuthService.logout();
+          EasyLoading.showError('You are not a admin. Please use a valid email address');
+        }
       } on FirebaseAuthException catch(error){
         EasyLoading.showError('${error.message}');
       }
