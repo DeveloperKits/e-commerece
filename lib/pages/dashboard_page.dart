@@ -1,11 +1,13 @@
 import 'package:ecommerece/auth/auth_service.dart';
+import 'package:ecommerece/custom_widgets/dashboard_item_view.dart';
+import 'package:ecommerece/model/dashboard_item.dart';
 import 'package:ecommerece/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-
 class DashBoardPage extends StatelessWidget {
   static const String routeName = "/dashboard";
+
   const DashBoardPage({super.key});
 
   @override
@@ -21,13 +23,21 @@ class DashBoardPage extends StatelessWidget {
                   Navigator.pushReplacementNamed(context, LoginPage.routeName);
                 });
               },
-              icon: const Icon(Icons.logout)
-          ),
+              icon: const Icon(Icons.logout)),
         ],
       ),
-
-      body: Center(
-        child: Text("E-Commerce Application DashBoard"),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemCount: dashboardItemList.length,
+          itemBuilder: (context, index){
+            final item = dashboardItemList[index];
+            return DashboardItemView(item: item,);
+          },
+        ),
       ),
     );
   }
